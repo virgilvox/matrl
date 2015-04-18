@@ -1,0 +1,49 @@
+/*** SEARCH ***/
+#side-bar {
+	width:20%;
+	height:100%;
+	min-height:600px; 
+	min-width: 275px; 
+
+/*	background: rgba(255,255,255,0.1);*/
+	
+	overflow:auto; 
+	float:left; 
+	z-index:20; 
+	position:fixed; 
+	left:0px; 
+}
+
+#side-bar img.logo { 
+	margin: 70px auto 85px auto; 
+	display:block; 
+	width:120px; 
+	height:auto;}
+
+#side-bar #criteria
+{
+	text-align:left; 
+	list-style-type:none; 
+	margin-right:40px; 
+	float:right;
+
+	color:#fff;
+	text-transform:uppercase;
+}
+
+#side-bar #criteria.background {
+    position: relative;
+    z-index: 1;
+    
+    &:before {
+        border-top: 2px solid #dfdfdf;
+        content:"";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+
+
+#side-bar #criteria li {height:35px;}

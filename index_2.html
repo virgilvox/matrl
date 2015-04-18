@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://mammothmedia.tv/ -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>MTRL | Polymer Search</title>
+	<link rel="icon" type="image/png" href="favicon.png" />
+	
+	<link rel="stylesheet" href="css/jquery-pi.css">
+	<script src="javascript/jquery-1.10.2.js"></script>
+ 	<script src="javascript/jquery-ui.js"></script>
+
+	<link href="css/style.css" rel="stylesheet" media="screen">
+	<link href="css/mobile.css" rel="stylesheet" media="screen">
+	<script>
+	  $(function() {
+	    $( "#slider-range" ).slider({
+	      range: true,
+	      min: -240,
+	      max: 2200,
+	      values: [ 0, 1200 ],
+	      slide: function( event, ui ) {
+	        $( "#lower" ).val( ui.values[ 0 ] +" ℃");
+	        $( "#higher" ).val( ui.values[ 1 ] + " ℃");
+	        $( "#amount" ).val( ui.values[ 0 ] + " ℃" + "                                   " +  ui.values[ 1 ] + " ℃" );
+	      								}
+	    							});
+		    $( "#lower" ).val( $( "#slider-range" ).slider( "values", 0 ) + " ℃" );
+		    $( "#higher" ).val( $( "#slider-range" ).slider( "values", 1 ) + " ℃");
+		    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + " ℃" + "                                   " + $( "#slider-range" ).slider( "values", 1 ) + " ℃"); 
+
+		  			});
+
+	  $(function() {
+    var availableTags = [
+    "Name",
+    "Class",
+    "Chemical Class",
+    "Components",
+    "Modulus Pa",
+    "Hydrogel",
+    "Abosrbable",
+    "Breakdown (Temperature, pH, Hydrolysis, Enzymatic)",
+    "Breakdown Time",
+    "Drug Delivery",
+    "Cell Scaffold",
+    "Functionalization",
+    "Structural",
+    "Delivery to Body",
+    "BioMaterial Class (Implanted, Transport and Containment, Process Function)",
+    "Solid Temperature L",
+    "Solid Temperature H",
+    "Solid pH L",
+    "Solid pH H",
+    "Coating?",
+    "Size g/mol",
+    "Autologous?",
+    "Bond (Hydrogen, Covalent, Ionic)",
+    "Example Body Part",
+    "Hydrophillic?"
+    ];
+    $( "#Search" ).autocomplete({
+      source: availableTags
+    });
+     });
+
+  	</script>
+
+</head>
+ 
+<body style="background-image:url(images/background_small.jpg)" class="home">
+
+<nav class="top"> 
+	<li> <a href="upload.html">Visualize Dataset</a> </li>
+	<li class="current"> <a href="index.html"> Search</a> </li>
+	<li> <a href="about.html">About</a> </li>
+<!-- 	<li id="specific-search"> 
+		<span style="white-space:nowrap">
+			<label> Search by Name: </label> 
+			<input type="text" name="search-word" >
+		</span>
+	</li> -->
+</nav>
+
+<div id="side-bar" class="left">
+	<a href="index.html"><img class="logo" src="images/logo.png"></a>
+	<div id="search-criteria">
+		<div id="condition">
+			<h1 id="condition-name"><input class="search" id="Search" type="text" name="" placeholder="Type to Search by Name"/> <img src="images/search.png" height="13"></h1>
+		</div>
+		<div id="condition">
+			<h1 id="condition-name">Hydrophilicity</h1>
+			<span id="state-list">
+				<button id="state-button" class="current">Hydrophillic</button>
+				<button id="state-button">Hydrophobic</button>
+			</span>
+		</div>
+		<div id="condition">
+			<h1 id="condition-name">Polymer Class</h1>
+			<span id="state-list">
+				<button id="state-button">Natural</button>
+				<button id="state-button" class="current">Synthetic</button>
+			</span id="state-list">
+		</div>
+		<div id="condition">
+			<h1 id="condition-name">Stable Temperature</h1>
+			<div id="state-slider">
+				<span> 
+					<h1 style="float:left;">-240 ℃</h1> <h1 style="float:right;">2200 ℃</h1>
+				</span> <!-- Replace with min and max values from jQuery above -->
+				<br>
+				<div id="slider-range"></div>
+				<br><br><br>
+				<span style="white-space:nowrap">
+					<h1 style = "display: inline;" > LOW: </h1>  
+					<input type="text" id="lower" readonly style="border:0; background-color: transparent; "> 
+				</span>
+				<span style="white-space:nowrap">
+					<h1 style = "display: inline;" > <h1 style = "display: inline;"> HIGH: </h1> 
+					<input type="text" id="higher" readonly style="border:0; background-color: transparent; "> 
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+			
+<div class="main">
+	<div id="output-bar"> 
+		<a title="Select an Output Format" class="tooltip">
+			<span title="">
+				<button id="output-button">Category</button> 
+				<button id="output-button">Stable Temperature</button> 
+				<button id="output-button">Stable pH</button> 
+				<button id="output-button">Young's Modulus</button> 
+				<button id="output-button">Density</button> 
+			</span>
+		</a>
+	</div>
+
+	<div id="output">
+
+	</div>
+
+	<br>
+	<br>
+
+	<h3> BINNING: 10%</h3>
+</div>
+	
+</body>
+</html>
+
+
+
