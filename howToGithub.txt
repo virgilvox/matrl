@@ -1,0 +1,14 @@
+// Update Files in git Folder
+git pull
+
+// add files from local to git
+git add *
+// make local commit changelog with comment
+git commit -m ‘I changed a thing'
+// send commit log to everyone else so they can see
+git push origin master
+
+// how to make a new text file
+nano something.txt
+// exit and save
+ctrl + x then y 
