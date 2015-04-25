@@ -175,6 +175,10 @@ nav #specific-search input{
 	width:120px; 
 	height:auto;}
 
+#search-image{
+	float:right;
+}
+
 #side-bar #search-criteria{
 }
 
@@ -190,7 +194,7 @@ nav #specific-search input{
 	color:#fff;
 	text-transform:uppercase;
 
-	padding: 0 10px 0px 0;
+	/*padding: 0 10px 0px 0;*/
 	border-bottom: solid #fff 2px;
 	margin-bottom: 5px;
 }
